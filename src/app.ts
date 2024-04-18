@@ -9,4 +9,6 @@ if (IS_DEVELOPMENT) {
   app.use(morgan('dev'));
 }
 
+app.get('/', (_, res) => res.send({message: 'DSA Board API'}));
+
 export default app;
