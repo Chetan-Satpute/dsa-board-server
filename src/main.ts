@@ -1,9 +1,10 @@
-import express from 'express';
+import {startServer, closeServer} from './server';
 
-const app = express();
+const server = startServer();
 
-const PORT = 8000;
-
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+['SIGTERM', 'SIGINT'].forEach(signal =>
+  process.on(signal, () => {
+    console.log(`${signal} signal received`);
+    closeServer(server);
+  })
+);
