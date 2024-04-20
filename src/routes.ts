@@ -38,9 +38,12 @@ apiRouter.get('/algorithm/:struct', (req, res) => {
   }
 
   const modifyAlgorithms = modifyAlgorithmsInfo[structName];
-  const animateAlgorithms = animateAlgorithmsInfo[structName];
+  const animateAlgorithmIds = animateAlgorithmsInfo[structName].map(algo => ({
+    id: algo.id,
+    name: algo.name,
+  }));
 
-  return res.send({modify: modifyAlgorithms, animate: animateAlgorithms});
+  return res.send({modify: modifyAlgorithms, animate: animateAlgorithmIds});
 });
 
 export default apiRouter;

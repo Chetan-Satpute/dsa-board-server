@@ -6,7 +6,7 @@ import {
   AlgorithmParameterType,
 } from '../../../types';
 
-export function replaceArray(
+export function linearSearch(
   board: Board,
   structure: Structure,
   args: Record<string, AlgorithmArgument>
@@ -14,8 +14,8 @@ export function replaceArray(
   console.log(board, structure, args);
 }
 
-export const replaceArrayInfo: Algorithm = {
-  id: 'replace-array',
-  name: 'Replace Array',
-  parameters: [{title: 'values', type: AlgorithmParameterType.NumberArray}],
+export const linearSearchInfo: Algorithm = {
+  id: 'linear-search',
+  name: 'Linear Search',
+  parameters: [{title: 'target', type: AlgorithmParameterType.Number}],
 };
