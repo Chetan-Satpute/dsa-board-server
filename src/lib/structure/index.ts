@@ -30,6 +30,15 @@ class Structure {
     this.rearrange();
   }
 
+  toData(): unknown {
+    return null;
+  }
+
+  static fromData(data: unknown): Structure {
+    data;
+    return new Structure();
+  }
+
   static getRandom(): Structure {
     return new Structure();
   }

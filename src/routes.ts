@@ -1,14 +1,15 @@
 import {Router} from 'express';
+
 import {getRandomStructureByName, isStructureName} from './lib';
 import Board from './lib/board';
 
 const apiRouter = Router();
 
-apiRouter.get('/:struct', (req, res) => {
+apiRouter.get('/random/:struct', (req, res) => {
   const {struct: structName} = req.params;
 
   if (!isStructureName(structName)) {
-    res.statusCode = 400;
+    res.statusCode = 404;
     return res.send({message: `Structure not found: ${structName}`});
   }
 
@@ -18,8 +19,9 @@ apiRouter.get('/:struct', (req, res) => {
   board.add(struct);
 
   const frame = board.getFrame();
+  const structureData = struct.toData();
 
-  return res.send({frame});
+  return res.send({frame, structureData});
 });
 
 export default apiRouter;

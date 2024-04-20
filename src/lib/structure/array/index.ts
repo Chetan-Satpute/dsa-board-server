@@ -21,8 +21,8 @@ class NodeArray extends Structure {
     }
 
     if (this.array.length > 0) {
-      this.array[0].corners = 0b1001;
-      this.array[this.array.length - 1].corners = 0b0110;
+      this.array[0].corners |= 0b1001;
+      this.array[this.array.length - 1].corners |= 0b0110;
     }
   }
 
@@ -32,6 +32,17 @@ class NodeArray extends Structure {
     }
 
     return frame;
+  }
+
+  toData(): number[] {
+    return this.array.map(node => node.value);
+  }
+
+  static fromData(data: number[]): NodeArray {
+    const nodeArray = new NodeArray();
+    nodeArray.array = data.map(value => new Node(value));
+
+    return nodeArray;
   }
 
   static getRandom(): NodeArray {
