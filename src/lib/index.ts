@@ -1,7 +1,9 @@
 import Structure from './structure';
 import NodeArray from './structure/array';
+import {arrayAnimateAlgorithmInfo} from './structure/array/animate';
+import {arrayModifyAlgorithmInfo} from './structure/array/modify';
+import {Algorithm, StructureName} from './types';
 
-export type StructureName = 'array';
 export function isStructureName(name: string): name is StructureName {
   switch (true) {
     case name === 'array':
@@ -18,3 +20,11 @@ export const structureGeneratorMap: Record<StructureName, () => Structure> = {
 export function getRandomStructureByName(name: StructureName) {
   return structureGeneratorMap[name]();
 }
+
+export const modifyAlgorithmsInfo: Record<StructureName, Algorithm[]> = {
+  array: arrayModifyAlgorithmInfo,
+};
+
+export const animateAlgorithmsInfo: Record<StructureName, Algorithm[]> = {
+  array: arrayAnimateAlgorithmInfo,
+};

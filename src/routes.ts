@@ -1,6 +1,11 @@
 import {Router} from 'express';
 
-import {getRandomStructureByName, isStructureName} from './lib';
+import {
+  animateAlgorithmsInfo,
+  getRandomStructureByName,
+  isStructureName,
+  modifyAlgorithmsInfo,
+} from './lib';
 import Board from './lib/board';
 
 const apiRouter = Router();
@@ -22,6 +27,20 @@ apiRouter.get('/random/:struct', (req, res) => {
   const structureData = struct.toData();
 
   return res.send({frame, structureData});
+});
+
+apiRouter.get('/algorithm/:struct', (req, res) => {
+  const {struct: structName} = req.params;
+
+  if (!isStructureName(structName)) {
+    res.statusCode = 404;
+    return res.send({message: `Structure not found: ${structName}`});
+  }
+
+  const modifyAlgorithms = modifyAlgorithmsInfo[structName];
+  const animateAlgorithms = animateAlgorithmsInfo[structName];
+
+  return res.send({modify: modifyAlgorithms, animate: animateAlgorithms});
 });
 
 export default apiRouter;
