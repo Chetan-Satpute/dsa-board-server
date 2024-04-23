@@ -1,5 +1,0 @@
-export enum EdgeType {
-  DIRECTED = 'DIRECTED',
-  UNDIRECTED = 'UNDIRECTED',
-  BIDIRECTED = 'BIDIRECTED',
-}
