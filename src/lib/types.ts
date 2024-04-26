@@ -6,7 +6,9 @@ export interface Point {
   y: number;
 }
 
-export type StructureId = string;
+export const enum StructureId {
+  Array = 'array',
+}
 
 export const enum AlgorithmParameterType {
   Number = 'number',
@@ -27,8 +29,13 @@ export interface Algorithm {
   parameters: AlgorithmParameter[];
 }
 
-export type AlgorithmFunction = (
+export type AnimateAlgorithmFunction = (
   board: Board,
+  structure: Structure,
+  args: Record<string, AlgorithmArgument>
+) => void;
+
+export type ModifyAlgorithmFunction = (
   structure: Structure,
   args: Record<string, AlgorithmArgument>
 ) => void;

@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import {IS_PRODUCTION, PORT} from '$constants/env';
-import getRandomStructureController from '$controllers/getRandomStructureController';
+import router from './router';
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.get('/', (_, res) => res.send({message: 'DSA Board API'}));
 app.get('/api/', (_, res) => res.send({message: 'DSA Board API'}));
 
-app.get('/:structureId/random', getRandomStructureController);
+app.use('/api', router);
 
 const server = app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);

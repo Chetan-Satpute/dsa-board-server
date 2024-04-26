@@ -25,7 +25,10 @@
       ],
       "$utils/*": [
         "./src/utils/*"
-      ]
+      ],
+      "$middlewares/*": [
+        "./src/middlewares/*"
+      ],
     }
   },
   "include": [

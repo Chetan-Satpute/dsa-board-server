@@ -1,20 +1,24 @@
 import yup from 'yup';
 
-import {Algorithm, AlgorithmFunction, AlgorithmParameterType} from '$lib/types';
+import {
+  Algorithm,
+  AlgorithmParameterType,
+  ModifyAlgorithmFunction,
+} from '$lib/types';
 import NodeArray from '..';
 import Node from '$lib/node';
+import {CustomError} from '$lib/utils';
 
 const argsSchema = yup.object({
   values: yup.array().required().of(yup.number().required()),
 });
 
-export const replaceArrayAlgorithmFunction: AlgorithmFunction = (
-  _board,
+export const replaceArrayAlgorithmFunction: ModifyAlgorithmFunction = (
   struct,
   args
 ) => {
   if (!(struct instanceof NodeArray)) {
-    throw Error();
+    throw new CustomError();
   }
 
   try {
@@ -22,8 +26,8 @@ export const replaceArrayAlgorithmFunction: AlgorithmFunction = (
     const {values} = validatedArgs;
 
     replaceArray(struct, values);
-  } catch {
-    throw Error();
+  } catch (err) {
+    throw new CustomError();
   }
 };
 

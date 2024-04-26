@@ -1,13 +1,8 @@
-import {AlgorithmFunction} from '$lib/types';
 import {structureClassMap} from '.';
+import {StructureId} from './types';
 
-export function verifyStructureId(id: string): boolean {
-  return structureClassMap[id] !== undefined;
+export function isStructureId(id: string): id is StructureId {
+  return id in structureClassMap;
 }
 
-export function verifyAlgorithmId(
-  id: string,
-  algorithmFunctionMap: Record<string, AlgorithmFunction>
-): boolean {
-  return algorithmFunctionMap[id] !== undefined;
-}
+export class CustomError extends Error {}

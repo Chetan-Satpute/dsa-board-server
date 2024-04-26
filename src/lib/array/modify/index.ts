@@ -1,4 +1,4 @@
-import {Algorithm, AlgorithmFunction, AlgorithmId} from '$lib/types';
+import {Algorithm, AlgorithmId, ModifyAlgorithmFunction} from '$lib/types';
 import {
   replaceArrayAlgorithm,
   replaceArrayAlgorithmFunction,
@@ -7,8 +7,7 @@ import {
 export const arrayModifyAlgorithms: Algorithm[] = [replaceArrayAlgorithm];
 export const arrayModifyAlgorithmFunctionMap: Record<
   AlgorithmId,
-  AlgorithmFunction
+  ModifyAlgorithmFunction
 > = {
   [replaceArrayAlgorithm.id]: replaceArrayAlgorithmFunction,
 };
-
