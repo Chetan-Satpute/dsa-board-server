@@ -12,7 +12,7 @@ const router = Router();
 router.use('/:structureId', checkStructure);
 
 router.get('/:structureId/random', getRandomController);
-router.post('/:structureId/algorithms', getAlgorithmsController);
+router.get('/:structureId/algorithms', getAlgorithmsController);
 router.post(
   '/:structureId/modify/:algorithmId',
   checkAlgorithmId('modify'),
