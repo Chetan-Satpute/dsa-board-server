@@ -1,5 +1,6 @@
 import NodeArray from './array';
 import {
+  arrayAnimateAlgorithmCode,
   arrayAnimateAlgorithmFunctionMap,
   arrayAnimateAlgorithms,
 } from './array/animate';
@@ -10,6 +11,7 @@ import {
 import Structure from './structure';
 import {
   Algorithm,
+  AlgorithmId,
   AnimateAlgorithmFunction,
   ModifyAlgorithmFunction,
   StructureId,
@@ -28,15 +30,22 @@ export const animateAlgorithms: Record<StructureId, Algorithm[]> = {
 };
 
 export const modifyAlgorithmFunctionMap: Record<
-  string,
+  StructureId,
   Record<string, ModifyAlgorithmFunction>
 > = {
   [StructureId.Array]: arrayModifyAlgorithmFunctionMap,
 };
 
 export const animateAlgorithmFunctionMap: Record<
-  string,
+  StructureId,
   Record<string, AnimateAlgorithmFunction>
 > = {
   [StructureId.Array]: arrayAnimateAlgorithmFunctionMap,
+};
+
+export const animateAlgorithmCodeMap: Record<
+  StructureId,
+  Record<AlgorithmId, string>
+> = {
+  [StructureId.Array]: arrayAnimateAlgorithmCode,
 };
