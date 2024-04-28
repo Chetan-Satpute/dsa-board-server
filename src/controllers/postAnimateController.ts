@@ -34,15 +34,13 @@ const postAnimateController: RequestHandler<{
 
     return res.send({
       runId: board.storeId,
-      pages: totalSteps / 10,
+      totalSteps: totalSteps,
     });
   } catch (err) {
     if (err instanceof CustomError) {
       res.statusCode = 400;
       return res.send({message: 'Bad Request'});
     }
-
-    console.log(err);
 
     res.statusCode = 500;
     return res.send({message: 'Internal Server Error!'});

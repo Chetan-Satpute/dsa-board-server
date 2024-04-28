@@ -46,6 +46,7 @@ class NodeArray extends Structure {
     const array = new NodeArray();
     array.array = values.map(value => new Node(value));
 
+    array.rearrange();
     return array;
   }
 
