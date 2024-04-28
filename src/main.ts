@@ -4,6 +4,7 @@ import morgan from 'morgan';
 
 import {IS_PRODUCTION, PORT} from '$constants/env';
 import router from './router';
+import StepStorage from '$services/Storage';
 
 const app = express();
 
@@ -22,10 +23,12 @@ const server = app.listen(PORT, () => {
 
 process.addListener('SIGINT', () => {
   console.log('SIGINT received');
+  StepStorage.timeouts.forEach(id => clearTimeout(id));
   server.close(() => console.log('server closed'));
 });
 
 process.addListener('SIGTERM', () => {
   console.log('SIGTERM received');
+  StepStorage.timeouts.forEach(id => clearTimeout(id));
   server.close(() => console.log('server closed'));
 });
