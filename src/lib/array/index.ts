@@ -1,3 +1,4 @@
+import {Color} from '$lib/color';
 import {Frame} from '$lib/frame';
 import Node from '$lib/node';
 import Structure from '$lib/structure';

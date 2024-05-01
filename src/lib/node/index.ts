@@ -1,3 +1,4 @@
+import {Color} from '$lib/color';
 import {Frame} from '$lib/frame';
 import Structure from '$lib/structure';
 
@@ -14,7 +15,7 @@ class Node extends Structure {
     super();
 
     this.value = value || 0;
-    this.color = '#ffffff';
+    this.color = Color.Transparent;
     this.corners = 0b1111;
   }
 

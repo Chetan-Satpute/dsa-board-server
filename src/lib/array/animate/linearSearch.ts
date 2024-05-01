@@ -8,6 +8,7 @@ import {
 } from '$lib/types';
 import {CustomError} from '$lib/utils';
 import NodeArray from '..';
+import { Color } from '$lib/color';
 
 const argsSchema = yup.object({
   target: yup.number().required(),
@@ -38,16 +39,26 @@ function linearSearch(board: Board, array: NodeArray, target: number) {
 
   board.pushStep([2]);
   for (let i = 0; i < array.array.length; i++) {
+    array.array[i].color = Color.Purple;
     board.pushStep([3]);
     if (array.array[i].value === target) {
+      array.array[i].color = Color.Green;
       board.pushStep([4]);
+
+      array.array[i].color = Color.Transparent;
+      board.pushStep([9]);
       return;
     }
 
     board.pushStep([2]);
+    array.array[i].color = Color.Transparent;
   }
 
+  for (const node of array.array) node.color = Color.Red;
   board.pushStep([8]);
+
+  for (const node of array.array) node.color = Color.Transparent;
+  board.pushStep([9]);
   return;
 }
 
