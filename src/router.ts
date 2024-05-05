@@ -9,12 +9,14 @@ import checkStructure from '$middlewares/checkStructureId';
 import getAnimateAlgorithmController from '$controllers/getAnimateAlgorithmController';
 import postAnimateController from '$controllers/postAnimateController';
 import getStepsController from '$controllers/getStepsController';
+import getStructuresController from '$controllers/getStructuresController';
 
 const router = Router();
 
+router.get('/structures', getStructuresController);
 router.get('/step/:runId/:page', getStepsController);
-router.use('/:structureId', checkStructure);
 
+router.use('/:structureId', checkStructure);
 router.get('/:structureId/random', getRandomController);
 router.get('/:structureId/algorithms', getAlgorithmsController);
 router.get(
