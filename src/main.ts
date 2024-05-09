@@ -14,6 +14,7 @@ app.use(cors());
 
 app.get('/', (_, res) => res.send({message: 'DSA Board API'}));
 app.get('/api/', (_, res) => res.send({message: 'DSA Board API'}));
+app.get('/api/ping', (_, res) => res.send({message: 'pong'}));
 
 app.use('/api', router);
 
