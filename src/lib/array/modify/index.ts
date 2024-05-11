@@ -7,10 +7,12 @@ import {
   replaceArrayAlgorithm,
   replaceArrayAlgorithmFunction,
 } from './replaceArray';
+import {sortArrayAlgorithm, sortArrayAlgorithmFunction} from './sortArray';
 
 export const arrayModifyAlgorithms: Algorithm[] = [
   randomArrayAlgorithm,
   replaceArrayAlgorithm,
+  sortArrayAlgorithm,
 ];
 
 export const arrayModifyAlgorithmFunctionMap: Record<
@@ -19,4 +21,5 @@ export const arrayModifyAlgorithmFunctionMap: Record<
 > = {
   [replaceArrayAlgorithm.id]: replaceArrayAlgorithmFunction,
   [randomArrayAlgorithm.id]: randomArrayAlgorithmFunction,
+  [sortArrayAlgorithm.id]: sortArrayAlgorithmFunction,
 };

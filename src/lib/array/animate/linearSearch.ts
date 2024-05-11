@@ -1,14 +1,15 @@
 import yup from 'yup';
 
 import Board from '$lib/board';
+import {Color} from '$lib/color';
 import {
   Algorithm,
   AlgorithmParameterType,
   AnimateAlgorithmFunction,
 } from '$lib/types';
 import {CustomError} from '$lib/utils';
+
 import NodeArray from '..';
-import { Color } from '$lib/color';
 
 const argsSchema = yup.object({
   target: yup.number().required(),
