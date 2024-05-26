@@ -1,5 +1,10 @@
 import {Algorithm, AnimateAlgorithmFunction, AlgorithmId} from '$lib/types';
 import {
+  selectionSortAlgorithm,
+  selectionSortAlgorithmCode,
+  selectionSortAlgorithmFunction,
+} from './SelectionSort';
+import {
   binarySearchAlgorithm,
   binarySearchAlgorithmCode,
   binarySearchAlgorithmFunction,
@@ -19,6 +24,7 @@ export const arrayAnimateAlgorithms: Algorithm[] = [
   linearSearchAlgorithm,
   binarySearchAlgorithm,
   bubbleSortAlgorithm,
+  selectionSortAlgorithm,
 ];
 
 export const arrayAnimateAlgorithmFunctionMap: Record<
@@ -28,10 +34,12 @@ export const arrayAnimateAlgorithmFunctionMap: Record<
   [linearSearchAlgorithm.id]: linearSearchAlgorithmFunction,
   [binarySearchAlgorithm.id]: binarySearchAlgorithmFunction,
   [bubbleSortAlgorithm.id]: bubbleSortAlgorithmFunction,
+  [selectionSortAlgorithm.id]: selectionSortAlgorithmFunction,
 };
 
 export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
   [linearSearchAlgorithm.id]: linearSearchAlgorithmCode,
   [binarySearchAlgorithm.id]: binarySearchAlgorithmCode,
   [bubbleSortAlgorithm.id]: bubbleSortAlgorithmCode,
+  [selectionSortAlgorithm.id]: selectionSortAlgorithmCode,
 };
