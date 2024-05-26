@@ -5,6 +5,11 @@ import {
   binarySearchAlgorithmFunction,
 } from './binarySearch';
 import {
+  bubbleSortAlgorithm,
+  bubbleSortAlgorithmCode,
+  bubbleSortAlgorithmFunction,
+} from './bubbleSort';
+import {
   linearSearchAlgorithm,
   linearSearchAlgorithmCode,
   linearSearchAlgorithmFunction,
@@ -13,6 +18,7 @@ import {
 export const arrayAnimateAlgorithms: Algorithm[] = [
   linearSearchAlgorithm,
   binarySearchAlgorithm,
+  bubbleSortAlgorithm,
 ];
 
 export const arrayAnimateAlgorithmFunctionMap: Record<
@@ -21,9 +27,11 @@ export const arrayAnimateAlgorithmFunctionMap: Record<
 > = {
   [linearSearchAlgorithm.id]: linearSearchAlgorithmFunction,
   [binarySearchAlgorithm.id]: binarySearchAlgorithmFunction,
+  [bubbleSortAlgorithm.id]: bubbleSortAlgorithmFunction,
 };
 
 export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
   [linearSearchAlgorithm.id]: linearSearchAlgorithmCode,
   [binarySearchAlgorithm.id]: binarySearchAlgorithmCode,
+  [bubbleSortAlgorithm.id]: bubbleSortAlgorithmCode,
 };

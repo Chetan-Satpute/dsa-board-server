@@ -1,6 +1,7 @@
 import {RequestHandler} from 'express';
 
 import Board from '$lib/board';
+import {createFrame} from '$lib/frame';
 import {animateAlgorithmFunctionMap, structureClassMap} from '$lib/index';
 import {AlgorithmId, StructureId} from '$lib/types';
 import {CustomError} from '$lib/utils';
@@ -32,9 +33,17 @@ const postAnimateController: RequestHandler<{
 
     const totalSteps = StepStorage.getStepCount(board.storeId);
 
+    const structureFrame = createFrame();
+    const structureData = struct.toString();
+
+    struct.toFrame(structureFrame);
+
     return res.send({
       runId: board.storeId,
       totalSteps: totalSteps,
+
+      structureFrame: structureFrame,
+      structureData: structureData,
     });
   } catch (err) {
     if (err instanceof CustomError) {
