@@ -24,6 +24,11 @@ import {
   insertionSortAlgorithmCode,
   insertionSortAlgorithmFunction,
 } from './insertionSort';
+import {
+  quickSortAlgorithm,
+  quickSortAlgorithmCode,
+  quickSortAlgorithmFunction,
+} from './quickSort';
 
 export const arrayAnimateAlgorithms: Algorithm[] = [
   linearSearchAlgorithm,
@@ -31,6 +36,7 @@ export const arrayAnimateAlgorithms: Algorithm[] = [
   bubbleSortAlgorithm,
   selectionSortAlgorithm,
   insertionSortAlgorithm,
+  quickSortAlgorithm,
 ];
 
 export const arrayAnimateAlgorithmFunctionMap: Record<
@@ -42,6 +48,7 @@ export const arrayAnimateAlgorithmFunctionMap: Record<
   [bubbleSortAlgorithm.id]: bubbleSortAlgorithmFunction,
   [selectionSortAlgorithm.id]: selectionSortAlgorithmFunction,
   [insertionSortAlgorithm.id]: insertionSortAlgorithmFunction,
+  [quickSortAlgorithm.id]: quickSortAlgorithmFunction,
 };
 
 export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
@@ -50,4 +57,5 @@ export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
   [bubbleSortAlgorithm.id]: bubbleSortAlgorithmCode,
   [selectionSortAlgorithm.id]: selectionSortAlgorithmCode,
   [insertionSortAlgorithm.id]: insertionSortAlgorithmCode,
+  [quickSortAlgorithm.id]: quickSortAlgorithmCode,
 };

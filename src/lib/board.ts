@@ -48,11 +48,11 @@ class Board {
   }
 
   pushStack(callSignature: string) {
-    this.currentStep.stack.push(callSignature);
+    this.currentStep.stack.unshift(callSignature);
   }
 
   popStack() {
-    this.currentStep.stack.pop();
+    this.currentStep.stack.shift();
   }
 }
 
