@@ -8,6 +8,7 @@ export interface Point {
 
 export const enum StructureId {
   Array = 'array',
+  BinarySearchTree = 'binary-search-tree',
 }
 
 export const enum AlgorithmParameterType {

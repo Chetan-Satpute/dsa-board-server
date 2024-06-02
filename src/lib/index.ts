@@ -1,4 +1,4 @@
-import {ARRAY_IMAGE} from '../assets/imageData';
+import {ARRAY_IMAGE, BINARY_SEARCH_TREE_IMAGE} from '../assets/imageData';
 import NodeArray from './array';
 import {
   arrayAnimateAlgorithmCode,
@@ -9,6 +9,16 @@ import {
   arrayModifyAlgorithmFunctionMap,
   arrayModifyAlgorithms,
 } from './array/modify';
+import BinarySearchTree from './binarySearchTree';
+import {
+  bstAnimateAlgorithmCode,
+  bstAnimateAlgorithmFunctionMap,
+  bstAnimateAlgorithms,
+} from './binarySearchTree/animate';
+import {
+  bstModifyAlgorithmFunctionMap,
+  bstModifyAlgorithms,
+} from './binarySearchTree/modify';
 import Structure from './structure';
 import {
   Algorithm,
@@ -20,14 +30,17 @@ import {
 
 export const structureClassMap: Record<StructureId, typeof Structure> = {
   [StructureId.Array]: NodeArray,
+  [StructureId.BinarySearchTree]: BinarySearchTree,
 };
 
 export const modifyAlgorithms: Record<StructureId, Algorithm[]> = {
   [StructureId.Array]: arrayModifyAlgorithms,
+  [StructureId.BinarySearchTree]: bstModifyAlgorithms,
 };
 
 export const animateAlgorithms: Record<StructureId, Algorithm[]> = {
   [StructureId.Array]: arrayAnimateAlgorithms,
+  [StructureId.BinarySearchTree]: bstAnimateAlgorithms,
 };
 
 export const modifyAlgorithmFunctionMap: Record<
@@ -35,6 +48,7 @@ export const modifyAlgorithmFunctionMap: Record<
   Record<string, ModifyAlgorithmFunction>
 > = {
   [StructureId.Array]: arrayModifyAlgorithmFunctionMap,
+  [StructureId.BinarySearchTree]: bstModifyAlgorithmFunctionMap,
 };
 
 export const animateAlgorithmFunctionMap: Record<
@@ -42,6 +56,7 @@ export const animateAlgorithmFunctionMap: Record<
   Record<string, AnimateAlgorithmFunction>
 > = {
   [StructureId.Array]: arrayAnimateAlgorithmFunctionMap,
+  [StructureId.BinarySearchTree]: bstAnimateAlgorithmFunctionMap,
 };
 
 export const animateAlgorithmCodeMap: Record<
@@ -49,6 +64,7 @@ export const animateAlgorithmCodeMap: Record<
   Record<AlgorithmId, string>
 > = {
   [StructureId.Array]: arrayAnimateAlgorithmCode,
+  [StructureId.BinarySearchTree]: bstAnimateAlgorithmCode,
 };
 
 export interface StructureInfo {
@@ -63,12 +79,12 @@ export const structureInfo: StructureInfo[] = [
     title: 'Array',
     image: ARRAY_IMAGE,
   },
-  /*
   {
     id: StructureId.BinarySearchTree,
     title: 'Binary Search Tree',
     image: BINARY_SEARCH_TREE_IMAGE,
   },
+  /*
   {
     id: StructureId.LinkedList,
     title: 'Linked List',
