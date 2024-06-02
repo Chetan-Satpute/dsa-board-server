@@ -1,7 +1,6 @@
 import {EdgeType, Frame} from '$lib/frame';
 import Node from '$lib/node';
 import Structure from '$lib/structure';
-import {CustomError} from '$lib/utils';
 import {createRandomNumberArray} from '$utils/index';
 
 type BinarySearchTreeData = {
@@ -74,15 +73,20 @@ class BinarySearchTree extends Structure {
     let ptr = this.root;
     while (ptr) {
       if (value < ptr.value) {
-        if (!ptr.left) return (ptr.left = node);
-        else ptr = ptr.left;
+        if (!ptr.left) {
+          ptr.left = node;
+          break;
+        } else ptr = ptr.left;
       } else if (value > ptr.value) {
-        if (!ptr.right) return (ptr.right = node);
-        else ptr = ptr.right;
+        if (!ptr.right) {
+          ptr.right = node;
+          break;
+        } else ptr = ptr.right;
       } else return ptr;
     }
 
-    throw new CustomError();
+    this.rearrange();
+    return node;
   }
 
   rearrange() {
