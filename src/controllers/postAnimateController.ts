@@ -51,6 +51,8 @@ const postAnimateController: RequestHandler<{
       return res.send({message: 'Bad Request'});
     }
 
+    console.log(err);
+
     res.statusCode = 500;
     return res.send({message: 'Internal Server Error!'});
   }

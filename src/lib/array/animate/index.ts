@@ -29,6 +29,11 @@ import {
   quickSortAlgorithmCode,
   quickSortAlgorithmFunction,
 } from './quickSort';
+import {
+  mergeSortAlgorithm,
+  mergeSortAlgorithmCode,
+  mergeSortAlgorithmFunction,
+} from './mergeSort';
 
 export const arrayAnimateAlgorithms: Algorithm[] = [
   linearSearchAlgorithm,
@@ -37,6 +42,7 @@ export const arrayAnimateAlgorithms: Algorithm[] = [
   selectionSortAlgorithm,
   insertionSortAlgorithm,
   quickSortAlgorithm,
+  mergeSortAlgorithm,
 ];
 
 export const arrayAnimateAlgorithmFunctionMap: Record<
@@ -49,6 +55,7 @@ export const arrayAnimateAlgorithmFunctionMap: Record<
   [selectionSortAlgorithm.id]: selectionSortAlgorithmFunction,
   [insertionSortAlgorithm.id]: insertionSortAlgorithmFunction,
   [quickSortAlgorithm.id]: quickSortAlgorithmFunction,
+  [mergeSortAlgorithm.id]: mergeSortAlgorithmFunction,
 };
 
 export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
@@ -58,4 +65,5 @@ export const arrayAnimateAlgorithmCode: Record<AlgorithmId, string> = {
   [selectionSortAlgorithm.id]: selectionSortAlgorithmCode,
   [insertionSortAlgorithm.id]: insertionSortAlgorithmCode,
   [quickSortAlgorithm.id]: quickSortAlgorithmCode,
+  [mergeSortAlgorithm.id]: mergeSortAlgorithmCode,
 };
